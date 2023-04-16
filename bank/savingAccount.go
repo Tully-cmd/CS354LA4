@@ -1,5 +1,5 @@
 package bank
-
+/*
 type ISavingAccount interface {
 	IAccount
 }
@@ -28,4 +28,4 @@ func AccureSaving(rate float32) {
 
 func (a *SavingAccount) ToString() string {
 	return a.Account.ToString()
-}
+}*/

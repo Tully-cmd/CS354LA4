@@ -1,9 +1,13 @@
 package bank
 
 import . "fmt"
+//import . "strconv"
 
 type IAccount interface {
-	Accure(rate float32)
+	Balance () float64
+	Deposit (float64)
+	Withdraw (float64)
+	ToString () string
 }
 
 type Account struct {
@@ -12,19 +16,29 @@ type Account struct {
 	balance float64
 }
 
-func Balance () float64 {
-	return balance
+// func NewCustomer(name string) (c *Customer) {
+// 	c=new(Customer)
+// 	c.Init(name)
+// 	return
+// }
+
+// func (c *Customer) Init(name string) {
+// 	c.name=name
+// }
+
+func (a *Account) Balance () float64 {
+	return a.balance
 }
 
-func Deposit (amount float64) {
-	balance += amount
+func (a *Account) Deposit (amount float64) {
+	a.balance += amount
 }
 
-func Withdraw (amount float64) {
-	balance -= amount
+func (a *Account) Withdraw (amount float64) {
+	a.balance -= amount
 }
 
-func ToString () string {
-	Printf("%d:%s:%d",number,customer,balance)
-	return number + ":" + customer.ToString() + ":" + balance
+func (a *Account) ToString () {
+	Printf("%d:%s:%d",a.number,a.customer,a.balance)
+	//return strconv.Itoa(a.number) + ":" + a.customer.ToString() + ":" + strconv.Itoa(a.balance)
 }

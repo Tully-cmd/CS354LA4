@@ -8,16 +8,16 @@ type CheckingAccount struct {
 	Account
 }
 
-func NewCheckingAccount(string number, Customer customer, float64 balance) (a *CheckingAccount) {
+func NewCheckingAccount(number string, customer Customer, balance float64) (a *CheckingAccount) {
 	a=new(CheckingAccount)
 	a.Init(number,customer,balance)
 	return
 }
 
-func (a *CheckingAccount) Init(string number, Customer customer, float64 balance) {
-	a.Account.number = number
-	a.Account.Customer = customer
-	a.Account.balance = balance
+func (a *CheckingAccount) Init(number string, customer Customer, balance float64) {
+	a.number = number
+	a.customer = customer
+	a.balance = balance
 }
 
 func AccureChecking(rate float32) {
@@ -25,5 +25,5 @@ func AccureChecking(rate float32) {
 }
 
 func (a *CheckingAccount) ToString() string {
-	return a.Account.ToString()
+	return a.ToString()
 }

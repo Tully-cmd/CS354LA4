@@ -1,11 +1,13 @@
 package bank
 
+import . "fmt"
+
 type IAccount interface {
 	Accure(rate float32)
 }
 
 type Account struct {
-	Customer
+	customer Customer
 	number string
 	balance float64
 }
@@ -23,5 +25,6 @@ func Withdraw (amount float64) {
 }
 
 func ToString () string {
-	Printf("%d:%s:%d",number,Customer,balance)
+	Printf("%d:%s:%d",number,customer,balance)
+	return number + ":" + customer.ToString() + ":" + balance
 }

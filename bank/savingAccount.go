@@ -9,14 +9,14 @@ type SavingAccount struct {
 	interest float32
 }
 
-func NewSavingAccount(string name, Customer customer, float64 balance) (a *SavingAccount) {
+func NewSavingAccount(string number, Customer customer, float64 balance) (a *SavingAccount) {
 	a=new(SavingAccount)
-	a.Init(name,customer,balance)
+	a.Init(number,customer,balance)
 	return
 }
 
-func (a *SavingAccount) Init(string name, Customer customer, float64 balance) {
-	a.Account.name = name
+func (a *SavingAccount) Init(string number, Customer customer, float64 balance) {
+	a.Account.number = number
 	a.Account.Customer = customer
 	a.Account.balance = balance
 }

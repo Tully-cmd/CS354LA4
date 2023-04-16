@@ -1,7 +1,5 @@
 package bank
 
-import . "fmt"
-
 type ICustomer interface {
 	ToString() string
 }

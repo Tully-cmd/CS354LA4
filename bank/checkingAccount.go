@@ -10,7 +10,7 @@ type CheckingAccount struct {
 
 func NewCheckingAccount(string name, Customer customer, float64 balance) (a *CheckingAccount) {
 	a=new(CheckingAccount)
-	a.Init(name,customer,balance);
+	a.Init(name,customer,balance)
 	return
 }
 

@@ -11,7 +11,7 @@ type SavingAccount struct {
 
 func NewSavingAccount(string name, Customer customer, float64 balance) (a *SavingAccount) {
 	a=new(SavingAccount)
-	a.Init(name,customer,balance);
+	a.Init(name,customer,balance)
 	return
 }
 

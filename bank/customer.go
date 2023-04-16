@@ -2,6 +2,8 @@ package bank
 
 type ICustomer interface {
 	ToString() string
+	//NewCustomer(string) Customer
+	Init(string) 
 }
 
 type Customer struct {

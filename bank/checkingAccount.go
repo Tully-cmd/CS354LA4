@@ -20,10 +20,6 @@ func (a *CheckingAccount) Init(number string, customer Customer, balance float64
 	a.balance = balance
 }
 
-func AccureChecking(rate float32) {
-	
-}
-
 func (a *CheckingAccount) ToString() string {
 	return a.ToString()
 }

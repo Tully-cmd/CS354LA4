@@ -21,9 +21,10 @@ func NewSavingAccount(number string, customer Customer, balance float64) (Saving
 	return a
 }
 
-func (a SavingAccount) Accure(rate float32) {
-	Printf("Accuring SavingAccount %s with a rate of %f\n",a.number,rate)
+func (a SavingAccount) Accure (rate float32) SavingAccount {
+	Printf("Accuring SavingAccount %s with a rate of %.2f\n",a.ToString(),rate)
 	a.interest = float32(float64(a.interest) + a.balance * float64(rate))
 	a.balance = a.balance + a.balance * float64(rate)
-	Printf("Balance After Accure: %f\n",a.balance)
+	Printf("Balance After Accure: %.2f\n",a.balance)
+	return a
 }

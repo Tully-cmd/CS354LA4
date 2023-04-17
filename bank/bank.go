@@ -1,7 +1,5 @@
 package bank
 
-import . "fmt"
-
 type IBank interface {
 	IAccount
 	ToString() string
@@ -11,35 +9,47 @@ type IBank interface {
 }
 
 type Bank struct {
-	bank []Account 
+	checkings []CheckingAccount
+	savings []SavingAccount 
 }
 
 func NewBank() (Bank) {
 	var b Bank
-	b.bank = nil
+	b.checkings = nil
+	b.savings = nil
 	return b
 }
 
-func (b Bank) Add(a Account) Bank {
-	b.bank = append(b.bank,a)
+func (b Bank) AddChecking(a CheckingAccount) Bank {
+	b.checkings = append(b.checkings,a)
+	return b
+}
+
+func (b Bank) AddSaving(a SavingAccount) Bank {
+	b.savings = append(b.savings,a)
 	return b
 }
 
 func (b Bank) Accure(rate float32) Bank{
-	for i, acc := range b.bank {
+	for i, acc := range b.savings {
 		i = i
-		Printf("acc.balance: %.2f\n",acc.balance)
-		b.bank[i] = acc.Accure(rate)
-		Printf("acc.balance: %.2f\n",acc.balance)
+		b.savings[i] = acc.Accure(rate)
 	}
-	Printf("b.ToString(): %s\n",b.ToString())
 	return b
 }
 
 func (b Bank) ToString() string {
-	var retString = ""
+	var retString = "\nChecking Accounts\n\n"
 
-	for i, acc := range b.bank {
+	for i, acc := range b.checkings {
+		i = i
+		retString += acc.ToString()
+		retString += "\n"
+	}
+
+	retString += "\nSaving Accounts\n\n"
+
+	for i, acc := range b.savings {
 		i = i
 		retString += acc.ToString()
 		retString += "\n"

@@ -8,25 +8,15 @@ type IAccount interface {
 	Deposit (float64)
 	Withdraw (float64)
 	ToString () string
-	Accure (float32)
+	//Accure (float32)
 }
 
 type Account struct {
 	customer Customer
 	number string
 	balance float64
-	interest float32
+	//interest float32
 }
-
-// func NewCustomer(name string) (c *Customer) {
-// 	c=new(Customer)
-// 	c.Init(name)
-// 	return
-// }
-
-// func (c *Customer) Init(name string) {
-// 	c.name=name
-// }
 
 func (a Account) Balance () float64 {
 	return a.balance
@@ -42,13 +32,13 @@ func (a Account) Withdraw (amount float64) Account {
 	return a
 }
 
-func (a Account) Accure (rate float32) Account {
-	Printf("Accuring Account %s with a rate of %f\n",a.number,rate)
-	a.interest = float32(float64(a.interest) + a.balance * float64(rate))
-	a.balance = a.balance + a.balance * float64(rate)
-	Printf("Balance After Accure: %f\n",a.balance)
-	return a
-}
+//func (a Account) Accure (rate float32) Account {
+	//Printf("Accuring Account %s with a rate of %f\n",a.number,rate)
+	//a.interest = float32(float64(a.interest) + a.balance * float64(rate))
+	//a.balance = a.balance + a.balance * float64(rate)
+	//Printf("Balance After Accure: %f\n",a.balance)
+	//return a
+//}
 
 func (a Account) ToString () string {
 

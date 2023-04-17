@@ -3,7 +3,7 @@ package bank
 type ISavingAccount interface {
 	IAccount
 	NewSavingAccount(string,Customer,float64)
-	AccureSaving(float32)
+	Accure(float32)
 }
 
 type SavingAccount struct {
@@ -20,6 +20,6 @@ func NewSavingAccount(number string, customer Customer, balance float64) (Saving
 }
 
 func (a SavingAccount) Accure(rate float32) {
-	//a.interest += (a.balance * rate)
-	//a.balance += (a.balance * rate)
+	a.interest = float32(float64(a.interest) + a.balance * float64(rate))
+	a.balance = a.balance + a.balance * float64(rate)
 }

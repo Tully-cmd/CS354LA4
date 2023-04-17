@@ -4,14 +4,18 @@ import . "fmt"
 import . "local/bank"
 
 func main() {
-	var a Customer=NewCustomer("Tully")
-	var aA CheckingAccount=NewCheckingAccount("1111",a,4000)
+	var customer Customer=NewCustomer("Tully")
+	var checkingAccount CheckingAccount=NewCheckingAccount("1111",customer,4000)
+	var savingAccount SavingAccount=NewSavingAccount("1112",customer,800)
 
-	Printf("a.ToString() => %s\n",a.ToString())
-	Printf("aA.ToString() => %s\n",aA.ToString())
+	Printf("customer.ToString() => %s\n",customer.ToString())
+	Printf("checkingAccount.ToString() => %s\n",checkingAccount.ToString())
+	Printf("savingAccount.ToString() => %s\n\n",savingAccount.ToString())
+
 
 	var bank Bank=NewBank()
-	bank = bank.Add(aA.Account)
+	bank = bank.Add(checkingAccount.Account)
+	bank = bank.Add(savingAccount.Account)
 	bank.Accure(0.03)
 	Printf("bank.ToString() => %s\n",bank.ToString())
 

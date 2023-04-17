@@ -15,6 +15,7 @@ type Account struct {
 	customer Customer
 	number string
 	balance float64
+	interest float32
 }
 
 // func NewCustomer(name string) (c *Customer) {
@@ -40,7 +41,8 @@ func (a Account) Withdraw (amount float64) {
 }
 
 func (a Account) Accure (rate float32) {
-	
+	a.interest = float32(float64(a.interest) + a.balance * float64(rate))
+	a.balance = a.balance + a.balance * float64(rate)
 }
 
 func (a Account) ToString () string {

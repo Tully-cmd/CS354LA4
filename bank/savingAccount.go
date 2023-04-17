@@ -19,7 +19,7 @@ func NewSavingAccount(number string, customer Customer, balance float64) (Saving
 	return a
 }
 
-func (a SavingAccount) AccureSaving(rate float32) {
+func (a SavingAccount) Accure(rate float32) {
 	//a.interest += (a.balance * rate)
 	//a.balance += (a.balance * rate)
 }

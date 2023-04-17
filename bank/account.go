@@ -8,6 +8,7 @@ type IAccount interface {
 	Deposit (float64)
 	Withdraw (float64)
 	ToString () string
+	Accure (float32)
 }
 
 type Account struct {
@@ -38,8 +39,12 @@ func (a Account) Withdraw (amount float64) {
 	a.balance -= amount
 }
 
+func (a Account) Accure (rate float32) {
+	
+}
+
 func (a Account) ToString () string {
 
-	return Sprintf("%s:%s:%f",a.number,a.customer.ToString(),a.balance)
+	return Sprintf("%s:%s:%.2f",a.number,a.customer.ToString(),a.balance)
 	//return strconv.Itoa(a.number) + ":" + a.customer.ToString() + ":" + strconv.Itoa(a.balance)
 }

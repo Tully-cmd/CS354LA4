@@ -1,5 +1,7 @@
 package bank
 
+import . "fmt"
+
 type ISavingAccount interface {
 	IAccount
 	NewSavingAccount(string,Customer,float64)
@@ -20,6 +22,8 @@ func NewSavingAccount(number string, customer Customer, balance float64) (Saving
 }
 
 func (a SavingAccount) Accure(rate float32) {
+	Printf("Accuring SavingAccount %s with a rate of %f\n",a.number,rate)
 	a.interest = float32(float64(a.interest) + a.balance * float64(rate))
 	a.balance = a.balance + a.balance * float64(rate)
+	Printf("Balance After Accure: %f\n",a.balance)
 }

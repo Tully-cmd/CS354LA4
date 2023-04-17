@@ -9,4 +9,10 @@ func main() {
 
 	Printf("a.ToString() => %s\n",a.ToString())
 	Printf("aA.ToString() => %s\n",aA.ToString())
+
+	var bank Bank=NewBank()
+	bank = bank.Add(aA.Account)
+	bank.Accure(0.03)
+	Printf("bank.ToString() => %s\n",bank.ToString())
+
 }

@@ -18,8 +18,9 @@ func NewBank() (Bank) {
 	return b
 }
 
-func (b Bank) Add(a Account) {
+func (b Bank) Add(a Account) Bank {
 	b.bank = append(b.bank,a)
+	return b
 }
 
 func (b Bank) Accure(rate float32) {

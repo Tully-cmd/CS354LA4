@@ -26,19 +26,20 @@ type Account struct {
 // 	c.name=name
 // }
 
-func (a *Account) Balance () float64 {
+func (a Account) Balance () float64 {
 	return a.balance
 }
 
-func (a *Account) Deposit (amount float64) {
+func (a Account) Deposit (amount float64) {
 	a.balance += amount
 }
 
-func (a *Account) Withdraw (amount float64) {
+func (a Account) Withdraw (amount float64) {
 	a.balance -= amount
 }
 
-func (a *Account) ToString () {
-	Printf("%d:%s:%d",a.number,a.customer,a.balance)
+func (a Account) ToString () string {
+
+	return Sprintf("%s:%s:%f",a.number,a.customer.ToString(),a.balance)
 	//return strconv.Itoa(a.number) + ":" + a.customer.ToString() + ":" + strconv.Itoa(a.balance)
 }

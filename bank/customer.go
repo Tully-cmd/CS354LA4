@@ -2,25 +2,20 @@ package bank
 
 type ICustomer interface {
 	ToString() string
-	//NewCustomer(string) Customer
-	Init(string) 
+	NewCustomer(string) Customer
 }
 
 type Customer struct {
 	name string
 }
 
-func NewCustomer(name string) (c *Customer) {
-	c=new(Customer)
-	c.Init(name)
-	return
+func NewCustomer(name string) (Customer) {
+	var c Customer
+	c.name = name
+	return c
 }
 
-func (c *Customer) Init(name string) {
-	c.name=name
-}
-
-func (c *Customer) ToString() string {
+func (c Customer) ToString() string {
 	return c.name
 }
 
